@@ -6,7 +6,7 @@
 /*   By: marias-e <marias-e@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/11 11:31:21 by marias-e          #+#    #+#             */
-/*   Updated: 2022/10/12 16:08:10 by marias-e         ###   ########.fr       */
+/*   Updated: 2022/10/13 10:11:04 by marias-e         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ int	ft_write_p(void *pointer)
 	count = 3;
 	temp = (unsigned long long)pointer;
 	write(1, "0x", 2);
-	if (temp == 0)
-		write(1, "0", 1);
-	else
-		count += ft_aux_hex(temp, "0123456789abcdef");
+	count += ft_aux_hex(temp, "0123456789abcdef");
 	return (count);
 }
 
@@ -33,7 +30,7 @@ static int	ft_aux_hex(unsigned long long num, char *base)
 {
 	int	count;
 
-	count = 0;	
+	count = 0;
 	if (num >= 16)
 	{
 		count += ft_aux_hex(num / 16, "0123456789abcdef");
